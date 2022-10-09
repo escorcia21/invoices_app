@@ -1,6 +1,5 @@
 import { NewButton, InvoiceTable, InvoiceItem } from './components'
 import { useSelector } from 'react-redux'
-import { useInvoices } from '../../hooks/useInvoices'
 import './invoices.css'
 
 export default function Invoices() {

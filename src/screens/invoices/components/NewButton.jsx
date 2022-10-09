@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom"
 export default function NewButton() {
     return (
-        <button id="invoices__button">
+        <Link id="invoices__button" to="/create">
             New Invoice
-        </button>
+        </Link>
     )
 }

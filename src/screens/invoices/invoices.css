@@ -3,21 +3,16 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-
-  /* box shadow */
-  background-color: transparent;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
 }
 
 /* invoices table */
-
 #invoices__table {
   width: 100%;
   border-collapse: collapse;
-  /* background: #fff; */
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 #invoices__table thead th{
   padding-top: 12px;
@@ -26,6 +21,7 @@
   border: none;
   color: white;
   font-size: 1.1rem;
+  font-weight: bold;
 }
 #invoices__table  td {
   color: rgb(46, 44, 44);
@@ -41,7 +37,7 @@
 #invoices__button {
   width: 200px;
   padding: 10px 0;
-  background-color: rgb(66, 145, 201);
+  background-color: #4b6eed;
   border: none;
   border-radius: 8px;
   color: white;
@@ -50,9 +46,11 @@
   margin-bottom: 10px;
   transition: .4s;
   font-weight: bold;
+  text-align: center;
+  text-decoration: none;
 }
 
 /* hover */
 #invoices__button:hover {
-  background-color: rgb(54, 114, 157);
+  background-color: #405ecb;
 }

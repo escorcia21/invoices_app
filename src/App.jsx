@@ -1,11 +1,19 @@
-import { useInvoices } from './hooks/useInvoices'
+import { useInit } from './hooks/useInit'
 import { Invoices } from './screens'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
-  const { error } = useInvoices()
+  useInit()
 
   return (
-    <Invoices />
+    // <Invoices />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Invoices/>} />
+        <Route path="/create" element={<div> hola </div>} />
+        <Route path="*" element={<div> Not found </div>} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
