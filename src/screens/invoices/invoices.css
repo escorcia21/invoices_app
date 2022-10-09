@@ -41,17 +41,18 @@
 #invoices__button {
   width: 200px;
   padding: 10px 0;
-  background-color: #4b6eed;
+  background-color: rgb(66, 145, 201);
   border: none;
   border-radius: 8px;
   color: white;
   font-size: 1.1rem;
   cursor: pointer;
   margin-bottom: 10px;
+  transition: .4s;
+  font-weight: bold;
 }
 
 /* hover */
 #invoices__button:hover {
-  background-color: #293d85;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  background-color: rgb(54, 114, 157);
 }
