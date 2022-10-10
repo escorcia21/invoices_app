@@ -37,7 +37,7 @@ export default function SearchCombo({ options, label, name , handleChange }) {
         <div className="form__field" >
             <label htmlFor={name}>{label}</label>
             <div {...getComboboxProps()}>
-                <input {...getInputProps()} type="text"/>
+                <input {...getInputProps()} type="text" required/>
             </div>
             <div id="combobox">
                 <ul {...getMenuProps()} style={ { display: isOpen ? 'block': 'none' }}>

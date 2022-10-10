@@ -20,13 +20,10 @@ export default function ProductItem({ product }) {
             <td>{product.productID}</td>
             <td>{product.product_name}</td>
             <td>{product.description}</td>
-            {/* <td>{product.quantity}</td> */}
-            <td>2</td>
+            <td>{product.quantity}</td>
             <td>{product.price}</td>
-            <td>100USD</td>
+            <td>{product.price * product.quantity }USD</td>
             <td><button className="delete__button" onClick={onDelete}>Delete</button></td>
-            {/* <td>{product.total}</td> */}
         </tr>
-
     )
 }

@@ -1,4 +1,4 @@
-export default function Field({ name, label, type, value, handleChange, errors }) {
+export default function Field({ name, label, type, value, handleChange, disabled }) {
     return (
         <div className="form__field">
             <label htmlFor={name}>{label}</label>
@@ -9,8 +9,9 @@ export default function Field({ name, label, type, value, handleChange, errors }
                 id={name}
                 value={value}
                 onChange={handleChange}
+                required
+                disabled={disabled}
             />
-            {/* {errors[name] && <span className="text-danger">This field is required</span>} */}
         </div>
     );
 }

@@ -7,7 +7,7 @@ export const invoiceSlice = createSlice({
     initialState: emptyInvoices,
     reducers: {
         addInvoice: (state, action) => {
-            return { ...state, ...action.payload }
+            return [...state, action.payload ]
         },
         getInvoices: (state, action) => {
             return action.payload

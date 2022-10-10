@@ -13,7 +13,7 @@ html {
 }
 #root {
   padding: 20px;
-  height: 100vh;
+  min-height: 100vh;
 }
 /* invoices table */
 .invoices__table {

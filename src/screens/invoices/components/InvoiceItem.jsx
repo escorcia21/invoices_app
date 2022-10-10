@@ -7,7 +7,7 @@ export default function InvoiceItem({ invoice }) {
             <td>{invoice.clientID}</td>
             <td>{formatDate(invoice.date)}</td>
             <td>{invoice.subtotal} USD</td>
-            <td>{invoice.discount*100}%</td>
+            <td>{invoice.discount}%</td>
             <td>{invoice.total} USD</td>
         </tr>
     )
