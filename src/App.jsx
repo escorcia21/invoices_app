@@ -1,5 +1,5 @@
 import { useInit } from './hooks/useInit'
-import { Invoices } from './screens'
+import { Invoices,CreateInvoice } from './screens'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Invoices/>} />
-        <Route path="/create" element={<div> hola </div>} />
+        <Route path="/create" element={<CreateInvoice/>} />
         <Route path="*" element={<div> Not found </div>} />
       </Routes>
     </BrowserRouter>

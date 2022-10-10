@@ -14,4 +14,35 @@ html {
 #root {
   padding: 20px;
   height: 100vh;
-}                      
+}
+/* invoices table */
+.invoices__table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+.invoices__table thead th{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #4b6eed;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.invoices__table  td {
+  color: rgb(46, 44, 44);
+  padding: 8px;
+  text-align: center;
+  font-size: 1rem;
+  max-width: 150px;
+  text-align: middle;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.invoices__table tbody tr:nth-child(even){background-color: #f2f2f2;}
+.invoices__table tbody  tr:hover {background-color: #ddd;}
