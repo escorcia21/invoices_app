@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { swalAlert } from "../utils/utils"
 
 const baseUrl = 'http://localhost:3000/EdgeAPP'
 
@@ -10,8 +11,12 @@ export async function fetcher(endPoint) {
             return invoices.results
         }
     } catch (error) {
-        console.log(error)
-        alert(error.message)
+        if (error.response) {
+            const { data } = error.response
+            swalAlert('error', data.error, 'Error')
+        } else {
+            swalAlert('error', error.message, 'Error')
+        }
     }
 }
 
@@ -23,9 +28,10 @@ export async function createDetailInvoice(data) {
         }
     } catch (error) {
         if (error.response) {
-            alert(error.response.data.error);
+            const { data } = error.response
+            swalAlert('error', data.error, 'Error')
         } else {
-            alert('Error', error.message);
+            swalAlert('error', error.message, 'Error');
         }
     }
 }
@@ -41,7 +47,8 @@ export async function createInvoice(invoice) {
         return res
     } catch (error) {
         if (error.response) {
-            alert(error.response.data.error);
+            const { data } = error.response
+            swalAlert('error', data.error, 'Error')
         } else {
             alert('Error', error.message);
         }
@@ -57,7 +64,8 @@ export async function getInvoiceDetail(id) {
         }
     } catch (error) {
         if (error.response) {
-            alert(error.response.data.error);
+            const { data } = error.response
+            swalAlert('error', data.error, 'Error')
         } else {
             alert('Error', error.message);
         }

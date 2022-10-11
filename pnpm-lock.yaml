@@ -11,6 +11,7 @@ specifiers:
   react-dom: ^18.2.0
   react-redux: ^8.0.4
   react-router-dom: ^6.4.2
+  sweetalert2: ^11.5.0
   vite: ^3.1.0
 
 dependencies:
@@ -21,6 +22,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-redux: 8.0.4_5uumaiclxbdbzaqafclbf6maf4
   react-router-dom: 6.4.2_biqbaboplfbrettd7655fr4n2y
+  sweetalert2: 11.5.0
   vite: 3.1.6
 
 devDependencies:
@@ -1047,6 +1049,10 @@ packages:
   /supports-preserve-symlinks-flag/1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  /sweetalert2/11.5.0:
+    resolution: {integrity: sha512-Ret0s0E8HMvGDkcHXnDVd8j7gijpGpuBhasiVzy+QAv+w0uEdFnjLMCfEOrIzbmVgeqxdzc6weBD0nucRGgKuA==}
+    dev: false
 
   /to-fast-properties/2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}

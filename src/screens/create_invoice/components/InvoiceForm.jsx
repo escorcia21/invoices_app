@@ -6,6 +6,7 @@ import { createInvoice,createDetailInvoice, fetcher } from "../../../services/in
 import { Table } from "../../../components"
 import Field from "./Field"
 import ProductItem from "./ProductItem"
+import { swalAlert } from "../../../utils/utils"
 
 const headers = ['Product ID', 'Product Name','Description', 'Quantity', 'Unit price', 'Total', 'Actions']
 
@@ -48,7 +49,7 @@ export default function InvoiceForm() {
     async function handeSubmit(e) {
         e.preventDefault()
         if (items.length === 0) {
-            alert('Please add at least one product')
+            swalAlert('warning','Please add at least one product','Warning')
             return
         }
             
@@ -72,11 +73,15 @@ export default function InvoiceForm() {
             products: formatProducts
         }
         
-        await createDetailInvoice(request)
+        await createDetailInvoice(request).then(
+            () => {
+                swalAlert('success', 'Invoice created successfully')
+            }
+        )
+        
         const invoices = await fetcher('/invoices')
         dispatch(getInvoices(invoices))
         dispatch(resetCart())
-        alert('Invoice created')  
     }
 
     function handleAddProduct(e) {
