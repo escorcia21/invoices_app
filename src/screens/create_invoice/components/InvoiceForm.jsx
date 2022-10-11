@@ -134,7 +134,7 @@ export default function InvoiceForm() {
                     handleChange={handleChange}
                     value={quantity}
                 />
-                <button className="form__button" onClick={handleAddProduct}>Add to card</button>
+                <button className="form__button" onClick={handleAddProduct}>Add product</button>
             </div>
             <div id='create__products'>
                 <Table headers={headers}>
