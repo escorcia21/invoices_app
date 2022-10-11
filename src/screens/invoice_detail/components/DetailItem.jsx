@@ -5,7 +5,7 @@ export default function DetailItem({ detail }) {
             <td>{detail.invoiceID}</td>
             <td>{detail.productID}</td>
             <td>{detail.product?.product_name}</td>
-            <td>{detail.quantity} USD</td>
+            <td>{detail.quantity}</td>
             <td>{detail.total} USD</td>
         </tr>
     )
