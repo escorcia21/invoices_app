@@ -18,7 +18,7 @@ export default function InvoiceItem({ invoice }) {
     }
 
     return (
-        <tr onPointerDown={handlePointer}>
+        <tr onClick={handlePointer}>
             <td>{invoice.invoice_number}</td>
             <td>{invoice.client_name}</td>
             <td>{formatDate(invoice.date)}</td>
