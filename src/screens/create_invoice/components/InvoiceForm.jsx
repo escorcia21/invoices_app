@@ -1,8 +1,8 @@
 import SearchCombo from "./SearchCombo"
 import { useRef, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { addToCart, updateClientID, updateDate, updateDiscount,resetCart, addInvoice } from "../../../redux/slices"
-import { createInvoice,createDetailInvoice } from "../../../services/invoiceService"
+import { addToCart, updateClientID, updateDate, updateDiscount,resetCart, addInvoice, getInvoices } from "../../../redux/slices"
+import { createInvoice,createDetailInvoice, fetcher } from "../../../services/invoiceService"
 import { Table } from "../../../components"
 import Field from "./Field"
 import ProductItem from "./ProductItem"
@@ -26,7 +26,7 @@ export default function InvoiceForm() {
                 dispatch(updateDate(value))
                 break
             case 'discount':
-                dispatch(updateDiscount(parseInt(value)))
+                dispatch(updateDiscount(value))
                 break
             case 'quantity':
                 if (value >= 1 || value === '') {
@@ -67,14 +67,8 @@ export default function InvoiceForm() {
         }
         
         const res = await createDetailInvoice(request)
-        dispatch(addInvoice({
-            invoice_number: data.invoice_number,
-            clientID,
-            discount,
-            date,
-            subtotal,
-            total
-        }))
+        const invoices = await fetcher('/invoices')
+        dispatch(getInvoices(invoices))
         dispatch(resetCart())
         alert('Invoice created')  
     }

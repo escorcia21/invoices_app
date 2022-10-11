@@ -6,7 +6,6 @@ const emptyCart = {
     discount: 0,
     items: [],
     subtotal: 0,
-    total: 0,
 }
 
 const totalReducer = (acc, product) => acc + (product.price * product.quantity)
@@ -22,15 +21,13 @@ export const cartSlice = createSlice({
             if (!already) {
                 const items = [...state.items, action.payload]
                 const subtotal = items.reduce(totalReducer, 0)
-                const total = subtotal - (subtotal * (state.discount / 100))
-                return {...state, items, subtotal, total}
+                return {...state, items, subtotal }
             }
         },
         deleteProduct: (state, action) => {
             const items = state.items.filter((product) => product.productID !== action.payload)
             const subtotal = items.reduce(totalReducer, 0)
-            const total = subtotal - (subtotal * (state.discount / 100))
-            return {...state, items, subtotal, total}
+            return {...state, items, subtotal }
         },
         updateClientID: (state, action) => {
             return {...state, clientID: action.payload}
@@ -39,8 +36,7 @@ export const cartSlice = createSlice({
             return {...state, date: action.payload}
         },
         updateDiscount: (state, action) => {
-            const total = state.subtotal - (state.subtotal * (state.discount / 100))
-            return {...state, discount: action.payload, total}
+            return {...state, discount: action.payload}
         },
         resetCart: (state, action) => {
             return emptyCart
