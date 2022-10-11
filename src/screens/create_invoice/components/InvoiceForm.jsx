@@ -47,7 +47,12 @@ export default function InvoiceForm() {
 
     async function handeSubmit(e) {
         e.preventDefault()
-        const { status, data } = await createInvoice(
+        if (items.length === 0) {
+            alert('Please add at least one product')
+            return
+        }
+            
+        const res = await createInvoice(
             {
                 clientID,
                 items,
@@ -55,6 +60,7 @@ export default function InvoiceForm() {
                 date
             }
         )
+
         const formatProducts = items.map((item) => {
             return {
                 productID: item.productID,
@@ -62,11 +68,11 @@ export default function InvoiceForm() {
             }
         })
         const request = {
-            invoiceID: data.invoice_number,
+            invoiceID: res.data.invoice_number,
             products: formatProducts
         }
         
-        const res = await createDetailInvoice(request)
+        await createDetailInvoice(request)
         const invoices = await fetcher('/invoices')
         dispatch(getInvoices(invoices))
         dispatch(resetCart())

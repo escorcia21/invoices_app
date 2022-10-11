@@ -1,8 +1,5 @@
 import axios from 'axios'
-import { useDispatch } from 'react-redux'
-import { resetCart } from '../redux/slices'
 
-// const dispatch = useDispatch()
 const baseUrl = 'http://localhost:3000/EdgeAPP'
 
 export async function fetcher(endPoint) {
@@ -13,7 +10,8 @@ export async function fetcher(endPoint) {
             return invoices.results
         }
     } catch (error) {
-        console.log(error.message)
+        console.log(error)
+        alert(error.message)
     }
 }
 
@@ -24,7 +22,11 @@ export async function createDetailInvoice(data) {
             return res
         }
     } catch (error) {
-        console.log(error.message)
+        if (error.response) {
+            alert(error.response.data.error);
+        } else {
+            alert('Error', error.message);
+        }
     }
 }
 
@@ -38,7 +40,11 @@ export async function createInvoice(invoice) {
         })
         return res
     } catch (error) {
-        console.log(error.message)
+        if (error.response) {
+            alert(error.response.data.error);
+        } else {
+            alert('Error', error.message);
+        }
     }
 }
 
@@ -50,6 +56,10 @@ export async function getInvoiceDetail(id) {
             return results
         }
     } catch (error) {
-        console.log(error.message)
+        if (error.response) {
+            alert(error.response.data.error);
+        } else {
+            alert('Error', error.message);
+        }
     }
 }
