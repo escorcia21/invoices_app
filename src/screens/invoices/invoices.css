@@ -25,3 +25,10 @@
 #invoices__button:hover {
   background-color: #405ecb;
 }
+
+#table__container {
+  width: 100%;
+  height: fit-content;
+  overflow: auto;
+  max-height: 90%;
+}

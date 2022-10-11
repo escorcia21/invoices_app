@@ -41,3 +41,15 @@ export async function createInvoice(invoice) {
         console.log(error.message)
     }
 }
+
+export async function getInvoiceDetail(id) {
+    try {
+        const res = await axios.get(`${baseUrl}/details/${id}`)
+        if (res.status === 200) {
+            const { results } = res.data
+            return results
+        }
+    } catch (error) {
+        console.log(error.message)
+    }
+}

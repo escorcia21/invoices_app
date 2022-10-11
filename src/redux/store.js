@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit"
-import { invoiceReducer,clientsReducer,productsReducer, cartReducer } from "./slices"
+import { invoiceReducer,clientsReducer,productsReducer, cartReducer,detailsReducer } from "./slices"
 
 
 export const store = configureStore({
@@ -8,5 +8,6 @@ export const store = configureStore({
         clients: clientsReducer,
         products: productsReducer,
         cart: cartReducer,
+        details: detailsReducer,
     }
 })

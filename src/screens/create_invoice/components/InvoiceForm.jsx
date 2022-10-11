@@ -7,7 +7,7 @@ import { Table } from "../../../components"
 import Field from "./Field"
 import ProductItem from "./ProductItem"
 
-const headers = ['product ID', 'Product Name','Desciption', 'Quantity', 'Unit price', 'Total', 'Accions']
+const headers = ['Product ID', 'Product Name','Description', 'Quantity', 'Unit price', 'Total', 'Actions']
 
 export default function InvoiceForm() {
     const clients = useSelector((state) => state.clients)
@@ -119,7 +119,7 @@ export default function InvoiceForm() {
                 <SearchCombo 
                     options={products}
                     name="product_name" 
-                    label="Poduct" 
+                    label="Product" 
                     handleChange={handleProducts} 
                 />
                 <Field 

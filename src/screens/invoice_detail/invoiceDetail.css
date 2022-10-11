@@ -1,0 +1,45 @@
+/* make invoice-detail looks like a modal*/
+.invoice-detail {
+    position: fixed;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* pointer-events: none; */
+}
+
+/* invoice detail content  */
+.invoice-detail__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+    padding: 20px;
+}
+.invoice-detail__table{
+    width: 100%;
+    min-height: fit-content;
+    max-height: 100%;
+}
+/* button and hover*/
+.invoice-detail__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition:  .4s ease-out;
+}
+.invoice-detail__close:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}

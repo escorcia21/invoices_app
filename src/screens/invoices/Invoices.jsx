@@ -11,13 +11,15 @@ export default function Invoices() {
     return (
         <main id='invoices__screen'>
             <NewButton />
-            <Table headers={headers}> 
-                {
-                    invoices.map(invoice => (
-                        <InvoiceItem key={invoice.id} invoice={invoice} />
-                    ))
-                }
-            </Table>
+            <div id='table__container'>
+                <Table headers={headers}> 
+                    {
+                        invoices.map(invoice => (
+                            <InvoiceItem key={invoice.id} invoice={invoice} />
+                        ))
+                    }
+                </Table>
+            </div>
         </main>
     )
 }
